@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Open+Sans:wght@400;700&display=swap');
+
+:root{
+    --font-main: 'Open Sans', sans-serif;
+    --font-title: 'Kanit';
+    }
+
+body{
+    background-image: url(../images/ford.webp);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header span{
+    color: #fff;
+    padding-left: .5%;
+}
+
+header .button{
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-family: var(--font-main);
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #042f6e;
+    border-radius: 60%;
+    background-color: #d9d9d9;
+
+}
+
+figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    padding-bottom: 5%;
+}
+
+figure h1{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: #042f6e;
+    background-color: #eeebeb;
+    border-radius: 50%;
+    font-family: var(--font-title);
+    font-size: 4rem;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    font-family: var(--font-main);
+    font-size: 2rem;
+    color: #fff;
+    margin: 0%;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    font-family: var(--font-main);
+    font-size: .9rem;
+    color: #fff;
+    margin: .1rem;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    margin: 2.5rem;
+}
+
+.button{
+    border: #eeebeb;
+    border-style: solid;
+    border-width: thin;
+    font-family: var(--font-main);
+    font-size: .9rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 7rem;
+    border-radius: .8rem;
+}
+
+#reg{
+    font-family: var(--font-main);
+    font-size: .7rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 7rem;
+}
+
+::selection{
+    background-color: #042f6e;
+    color: #d9d9d9;
+}
+
+/*para a tela de login*/
+
+div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding-left: 33.5vw;
+    margin: 0;
+}
+
+div #title{
+    font-family: var(--font-main);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+div #sub{
+    font-family: var(--font-main);
+    font-size: .8rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+label{
+    font-family: var(--font-main);
+    font-size: .8rem;
+    color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+input{
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0 0 .1rem 0;
+    width: 250%;
+    margin-top: 10%;
+}
+
+#esq{
+    font-family: var(--font-main);
+    font-size: .7rem;
+    color: rgb(112, 112, 112);
+    text-decoration: none;
+    font-style: italic;
+    justify-self: flex-end;
+}
+
+div .button{
+    border: #eeebeb;
+    background-color: #d9d9d9;
+    border-style: solid;
+    border-width: thin;
+    font-family: var(--font-main);
+    font-size: .9rem;
+    color: #042f6e;
+    text-decoration: none;
+    padding: 1rem 7rem;
+    border-radius: .8rem;
+    margin-left: 10%;
+    margin-top: 5%;
+}
