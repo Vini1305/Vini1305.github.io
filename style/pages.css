@@ -136,6 +136,18 @@ header .button{
     justify-content: space-between;
     align-items: center;
     padding: .6rem;
+    align-content: center;
+}
+
+#user_box a{
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    justify-items: space-between;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+
 }
 
 #user_box img{
@@ -275,8 +287,17 @@ div .button_home{
     width: 50%;
     height: 10vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     margin-right: 2.5%;
+    flex-direction: column;
+}
+
+.bottom .dist{
+    color: #000;
+    font-family: var(--font-main);
+    font-size: .8rem;
+    font-size: larger;
 }
 
 .bottom #score{

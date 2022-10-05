@@ -1,30 +1,60 @@
 var space = document.querySelector("#info_trajeto")
+var output = document.querySelector("#distancia")
 
-function getDistance(){
+function getValues(){
     const current = document.querySelector("#current").value
-    const destinations = document.querySelector(".onde").value
+    const address = document.querySelector(".onde").value
 
     sessionStorage.setItem("CURRENT", current)
-    sessionStorage.setItem("DESTINATIONS", destinations)
+    sessionStorage.setItem("ADDRESS", address)
 }
 
-let destinations = sessionStorage.getItem("DESTINATION")
-let current = sessionStorage.getItem("CURRENT")
+async function getDistance(){
 
-destinations = destinations.replace(/\s+/g, '')
+    output.innerHTML = ''
 
-destinations = destinations.toLocaleLowerCase()
+    getValues()
 
-destinations = destinations.replace(/[^\w\s]/gi, '')
+    let current = sessionStorage.getItem("CURRENT")
+    let address = sessionStorage.getItem("ADDRESS")
 
-current = current.replace(/\s+/g, '')
+    if (current != null){
+        current = current.replace(/\s+/g, '').replace(/[^\w\s]/gi, '').toLocaleLowerCase()
+    }
 
-current = current.toLocaleLowerCase()
+    if (address != null){
+        address = address.replace(/[^\w\s]/gi, '').replace(/\s+/g, '').toLocaleLowerCase()
+    }
 
-current = current.replace(/[^\w\s]/gi, '')
+    var distanceBetween = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='+current+'&destinations='+address+'&units=imperial&key=AIzaSyBmFnBeKU2jbmBsdXTed2EYk1ZBglusu7U'
 
-let distanceBetween = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='+current+'destinations='+destinations+'&units=imperial&key=AIzaSyBmFnBeKU2jbmBsdXTed2EYk1ZBglusu7U'
+    console.log(JSON.stringify(distanceBetween))  
 
-console.log(distanceBetween)
+    var service = new google.maps.DistanceMatrixService;
+    service.getDistanceMatrix({
+        origins: [current],
+        destinations: [address],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.METRIC,
+        avoidHighways: false,
+        avoidTolls: false
+    }, function(response, status) {
+        if (status !== google.maps.DistanceMatrixStatus.OK) {
+        alert('Error was: ' + status);
+        } /*else {
+        alert(response.originAddresses[0] + ' --> ' + response.destinationAddresses[0] + ' ==> ' + response.rows[0].elements[0].distance.text);
+        }*/
 
+        let head = document.createElement('span')
+        head.innerHTML = 'distância'
 
+        let outputBox = document.createElement('span')
+        outputBox.classList.add("dist")
+        outputBox.innerHTML = response.rows[0].elements[0].distance.text
+
+        output.appendChild(head)
+        output.appendChild(outputBox)
+    });
+    
+    
+}
