@@ -15,7 +15,7 @@
         <a href="./home.html"><span class="material-icons">arrow_back</span></a>
         <h1 id="second">Trajeto</h1>
         <a href="#" class="button">?</a>
-     </header>
+    </header>
 
      <div id="trajeto">
 
@@ -25,12 +25,12 @@
                 <div id="block1">
                     <div id="de">
                         <span class="material-icons">radio_button_unchecked</span>
-                        <input type="text">
+                        <input type="text" placeholder="onde você está?" id="current">
                         <span class="material-icons" id="close">close</span>
                     </div>
                     <div id="para">
                         <span class="material-icons">radio_button_unchecked</span>
-                        <input type="text">
+                        <input type="text" class="onde" placeholder="para onde quer ir?">
                         <span class="material-icons" id="close">close</span>
                     </div>
                 </div>
@@ -49,11 +49,17 @@
 
         <div id="user_box">
             <img src="./images/FaíscMcQueen.jpg" alt="perfil">
-            <span class="material-icons">arrow_circle_right</span>
+            <a href="#" onclick="getDistance()">
+                <span class="material-icons">arrow_circle_right</span>
+            </a>
         </div>
 
-        <a href="./alertas.html" class="button_home">Prosseguir</a>
+        <a href="./alertas.html" class="button_home"  onclick="getAdd()">Prosseguir</a>
     </div>
 
 </body>
+
+<script src="./scripts/mapGetter.js"></script>
+<script src="./scripts/distanceGetter.js"></script>
+
 </html>
