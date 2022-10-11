@@ -20,24 +20,25 @@
         <h1>ReaperPass</h1>
     </figure>
 
-    <div>
+    <div id="loginpswd">
         <span id="title">Olá!</span>
         <span id="sub">Efetue o Login.</span>
 
         <form action="#" method="get">
             <label for="login">Login</label>
-            <input type="text" name="login" id="login">
+            <input style="color:white" type="text" name="login" id="login">
         </form>
 
         <form action="#" method="get">
             <label for="senha">Senha</label>
-            <input type="text" name="senha" id="senha">
+            <input style="color:white" type="text" name="senha" id="senha">
         </form>
 
         <a href="#" id="esq">Esqueceu a senha?</a>
 
-        <a href="./home.html" class="button">Login</a>
+        <a href="#" class="button" onclick="verify()">Login</a>
     </div>
 
 </body>
+<script src="./scripts/loginVerifier.js"></script>
 </html>

@@ -1,5 +1,6 @@
 var space = document.querySelector("#info_trajeto")
 var output = document.querySelector("#distancia")
+var outscore = document.querySelector("#score")
 
 function getValues(){
     const current = document.querySelector("#current").value
@@ -12,6 +13,7 @@ function getValues(){
 async function getDistance(){
 
     output.innerHTML = ''
+    outscore.innerHTML = ''
 
     getValues()
 
@@ -48,13 +50,24 @@ async function getDistance(){
         let head = document.createElement('span')
         head.innerHTML = 'distância'
 
+        let head2 = document.createElement('span')
+        head2.innerHTML = 'pontuação do trecho'
+
         let outputBox = document.createElement('span')
         outputBox.classList.add("dist")
         outputBox.innerHTML = response.rows[0].elements[0].distance.text
 
+        let outscoreBox = document.createElement('span')
+        outscoreBox.classList.add("scor")
+        outscoreBox.innerHTML = "10"
+
         output.appendChild(head)
         output.appendChild(outputBox)
+
+        outscore.appendChild(head2)
+        outscore.appendChild(outscoreBox)
+
+
     });
-    
     
 }

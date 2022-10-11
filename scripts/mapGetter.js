@@ -4,6 +4,7 @@ function getAdd(){
     const address = document.querySelector(".onde").value
 
     sessionStorage.setItem("ADDRESS", address)
+    
 }
 
 let destination = sessionStorage.getItem("ADDRESS")

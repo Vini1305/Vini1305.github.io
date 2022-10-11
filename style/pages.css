@@ -116,11 +116,20 @@ header .button{
 .feed_box{
     margin-top: 5vh;
     background-color: #fff;
-    height: 25vh;
+    height: 50vh;
     border-radius: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-#feed img{
+.feed_box span{
+    margin-top: 5vh;
+    color: #000;
+}
+
+#feed #circle{
     width: 3vw;
     height: 6vh;
     border-radius: 50%;
@@ -156,7 +165,8 @@ header .button{
 }
 
 #user_box span{
-    color: #042f6e
+    color: #042f6e;
+    margin-left: 2vw;
 }
 
 #feed #bottom{
@@ -196,6 +206,12 @@ div .button_home{
     padding-right: 30%;
 }
 
+.feed_box .main_car{
+    width: 30vw;
+    height: 30vh;
+    border-radius: .5em;
+}
+
 #second{
     font-family: var(--font-main);
     color: #fff;
@@ -214,6 +230,7 @@ div .button_home{
     align-items: center;
     font-family: var(--font-main);
     border-radius: .5em;
+    height: 56vh;
 }
 
 .info_box h1{
@@ -300,6 +317,13 @@ div .button_home{
     font-size: larger;
 }
 
+.bottom .scor{
+    color: #000;
+    font-family: var(--font-main);
+    font-size: .8rem;
+    font-size: larger;
+}
+
 .bottom #score{
     background-color: #fff;
     padding: 1em;
@@ -308,9 +332,10 @@ div .button_home{
     width: 50%;
     height: 10vh;
     display: flex;
-    justify-content: center;
-    margin-left: 2.5%;
-    margin-bottom: 5%;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 2.5%;
+    flex-direction: column;
 }
 
 #block1 #close{
@@ -348,6 +373,7 @@ div .button_not{
     justify-content: center;
     padding: 1rem;
     margin: 2vh 15vw 0 15vw;
+    width: 10vw;
 }
 
 #trajeto #bottom{
