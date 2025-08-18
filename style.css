@@ -8,13 +8,13 @@ body {
 }
 
 
-#page1, #page2, #page3{
+#page1, #page2{
     height: auto;
-    margin-top: 600px;
+    margin-top: 200px;
     margin-bottom: 100px;
 }
 
-#page4, #page5{
+#page4, #page5, #page3{
     margin-top: 600px;
     margin-bottom: 100px;
 }
