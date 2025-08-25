@@ -1,0 +1,33 @@
+.question {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+.question p{
+    color: black;
+    font-size: 15px;
+}
+.question.inactive {
+    opacity: 1;
+    pointer-events: none;
+}
+.question.correct {
+    background-color: #a1ffb7;
+    border-color: #c3e6cb;
+}
+.question.incorrect {
+    background-color: #ffa7ae;
+    border-color: #f5c6cb;
+}
+.question p {
+    font-weight: bold;
+}
+.question .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: left;
+}

@@ -1,0 +1,83 @@
+.animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.token-box, .model-box {
+    width: 200px;
+    height: auto;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    position: relative;
+}
+
+.token-box {
+    background-color: #f8f9fa;
+}
+
+.model-box {
+    background-color: #e9ecef;
+    flex-direction: column; /* Stack children vertically */
+    padding: 10px;
+    color: black;
+}
+
+.token {
+    position: absolute;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: moveToken 6s infinite;
+}
+
+@keyframes moveToken {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    40% {
+        transform: translateX(200px);
+        opacity: 1;
+    }
+    60% {
+        transform: translateX(200px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(400px);
+        opacity: 1;
+    }
+}
+
+.probability {
+    font-size: 0.9rem;
+    color: #007bff;
+    opacity: 0;
+    animation: showProbability 6s infinite;
+}
+
+@keyframes showProbability {
+    0%, 40% {
+        opacity: 0;
+    }
+    50%, 60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.output-token {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #007bff;
+}
