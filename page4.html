@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Linguagem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .animation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 50px;
+        }
+
+        .token-box, .model-box {
+            width: 200px;
+            height: auto;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            position: relative;
+        }
+
+        .token-box {
+            background-color: #f8f9fa;
+        }
+
+        .model-box {
+            background-color: #e9ecef;
+            flex-direction: column; /* Stack children vertically */
+            padding: 10px;
+            color: black;
+        }
+
+        .token {
+            position: absolute;
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            animation: moveToken 6s infinite;
+        }
+
+        @keyframes moveToken {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            40% {
+                transform: translateX(200px);
+                opacity: 1;
+            }
+            60% {
+                transform: translateX(200px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(400px);
+                opacity: 1;
+            }
+        }
+
+        .probability {
+            font-size: 0.9rem;
+            color: #007bff;
+            opacity: 0;
+            animation: showProbability 6s infinite;
+        }
+
+        @keyframes showProbability {
+            0%, 40% {
+                opacity: 0;
+            }
+            50%, 60% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .output-token {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="mb-4">Modelos de Linguagem</h1>
+
+        <div class="animation-container">
+            <div class="token-box">
+                <span class="token">Token 1</span>
+            </div>
+            <div class="model-box">
+                <span>Modelo</span>
+                <span class="probability">Probabilidade Token 2: 85%</span>
+                <span class="probability">Probabilidade Token 4: 10%</span>
+                <span class="probability">Probabilidade Token 10: 5%</span>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <a href="page3.html" class="btn btn-secondary me-2">Voltar</a>
+            <a href="page5.html" class="btn btn-primary">Prosseguir</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

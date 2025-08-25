@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Linguagem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tokens {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .tokens.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .token {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+            color: black;
+            font-weight: bold;
+        }
+        .token:nth-child(odd) {
+            background-color: #d1e7dd; /* Light green */
+            border: 3px solid green;
+        }
+        .token:nth-child(even) {
+            background-color: #f8d7da; /* Light red */
+            border: 3px solid yellow;
+        }
+        .token-index {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="mb-4">Modelos de Linguagem</h1>
+        
+        <p id="sentence" class="fs-4">Bom dia, como está?</p>
+        <button id="tokenizeBtn" class="btn btn-primary mt-3">Tokenizar</button>
+
+        <div id="tokensContainer" class="tokens"></div>
+
+        <div class="mt-5">
+            <a href="page2.html" class="btn btn-secondary me-2">Voltar</a>
+            <a href="page4.html" class="btn btn-primary">Prosseguir</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const sentence = document.getElementById('sentence').innerText;
+        const tokenizeBtn = document.getElementById('tokenizeBtn');
+        const tokensContainer = document.getElementById('tokensContainer');
+
+        tokenizeBtn.addEventListener('click', () => {
+            // Clear previous tokens
+            tokensContainer.innerHTML = '';
+
+            // Split the sentence into tokens
+            const tokens = sentence.split(' ');
+
+            // Create token elements and animate them
+            tokens.forEach((token, index) => {
+                const tokenElement = document.createElement('div');
+                tokenElement.classList.add('token');
+
+                // Add token text
+                const tokenText = document.createElement('span');
+                tokenText.innerText = token;
+                tokenElement.appendChild(tokenText);
+
+                // Add token index
+                const tokenIndex = document.createElement('span');
+                tokenIndex.classList.add('token-index');
+                tokenIndex.innerText = `Índice: ${index}`;
+                tokenElement.appendChild(tokenIndex);
+
+                tokensContainer.appendChild(tokenElement);
+
+                // Add animation delay for each token
+                setTimeout(() => {
+                    tokensContainer.classList.add('show');
+                }, index * 300);
+            });
+        });
+    </script>
+</body>
+</html>

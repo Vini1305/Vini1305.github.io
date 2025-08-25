@@ -1,150 +1,30 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background: #1a1525;
-  color: #eee;
-  overflow-y: auto; /* permite rolagem vertical */
+    background-color: #260033; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+    font-family: 'Arial', sans-serif;
 }
-
-
-#page1, #page2{
-    height: auto;
-    margin-top: 200px;
-    margin-bottom: 100px;
+.container {
+    margin-top: 10%;
+    text-align: center;
 }
-
-#page4, #page5, #page3{
-    margin-top: 600px;
-    margin-bottom: 100px;
+h1 {
+    font-size: 2.5rem;
+    color: #bb86fc; /* Soft purple for headings */
+    font-weight: bold;
 }
-
-h1, h2, h3 {
-    color: #c77dff;
-    text-shadow: 0 0 10px #9d4edd;
+p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #e0e0e0; /* Light text for paragraphs */
 }
-.btn-advance {
-    background: linear-gradient(90deg, #7209b7, #f72585);
+.btn-custom {
+    background-color: #bb86fc; /* Soft purple for buttons */
+    color: #121212; /* Dark text for contrast */
     border: none;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 30px;
-    box-shadow: 0 0 15px #7209b7;
-    transition: 0.3s;
-}
-.btn-advance:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px #f72585;
-}
-.hidden {
-    display: none;
-}
-.token {
-    display: inline-block;
-    margin: 5px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: #3c096c;
-    color: #fff;
-    box-shadow: 0 0 8px #9d4edd;
-}
-.training-bar {
-    width: 0%;
-    height: 30px;
-    background: linear-gradient(90deg, #4361ee, #7209b7);
     border-radius: 15px;
-    transition: width 0.3s;
+    box-shadow: 0 4px 6px rgb(0, 255, 238); /* Shadow for highlighting */
 }
-.chat-box {
-    background: #1a1525;
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 10px;
+.btn-custom:hover {
+    background-color: #3700b3; /* Darker purple on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Slightly larger shadow on hover */
 }
-
-.token {
-  display: inline-block;
-  margin: 5px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: #3c096c;
-  color: #fff;
-  box-shadow: 0 0 8px #9d4edd;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: all 0.4s ease;
-}
-
-.token.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.neuron {
-  width: 30px;
-  height: 30px;
-  background: #7209b7;
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: 0 0 10px #9d4edd;
-}
-
-.training-bar {
-  width: 0%;
-  height: 30px;
-  background: linear-gradient(90deg, #4361ee, #7209b7);
-  border-radius: 15px;
-  transition: width 0.3s;
-}
-
-.tokenAnim {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #f72585;
-  position: absolute;
-  opacity: 0.8;
-  box-shadow: 0 0 8px #f72585;
-}
-
-.chat-message {
-  margin-bottom: 10px;
-  padding: 8px 12px;
-  border-radius: 12px;
-  max-width: 80%;
-  word-wrap: break-word;
-}
-
-.chat-user {
-  background: #4361ee;
-  color: #fff;
-  align-self: flex-start;
-}
-
-.chat-llm {
-  background: #7209b7;
-  color: #fff;
-  align-self: flex-end;
-}
-
-.token-prob {
-  display: inline-block;
-  margin: 2px;
-  padding: 4px 6px;
-  border-radius: 6px;
-  font-size: 0.9em;
-}
-
-.page {
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-direction: column;
-}
-
-#network, #lossChart, #tokenList {
-  max-height: 300px; /* altura máxima */
-  overflow-y: auto;  /* permite rolagem interna se necessário */
-  margin-bottom: 20px;
-}
-

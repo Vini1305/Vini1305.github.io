@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Linguagem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            text-align: left;
+        }
+        .question p{
+            color: black;
+            font-size: 15px;
+        }
+        .question.inactive {
+            opacity: 1;
+            pointer-events: none;
+        }
+        .question.correct {
+            background-color: #a1ffb7;
+            border-color: #c3e6cb;
+        }
+        .question.incorrect {
+            background-color: #ffa7ae;
+            border-color: #f5c6cb;
+        }
+        .question p {
+            font-weight: bold;
+        }
+        .question .btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Modelos de Linguagem</h1>
+        
+        <div id="quiz">
+            <div class="question" data-correct="A">
+                <p>1 - Dado o dataset: {'Eu gosto de bolos', 'Eu quero um biscoito' e 'Nós gostamos de cavalos'} aponte a alternativa que determina a probabilidade do próximo token ser 'bolos' quando o token processado é 'de', sabendo que a probabilidade é calculada com apenas um token:</p>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'A')">A) 50%</button>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'B')">B) 100%</button>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'C')">C) 33%</button>
+            </div>
+            <div class="question" data-correct="B">
+                <p>2 - Durante o treinamento, o modelo aprende a prever:</p>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'A')">A) O primeiro token da frase</button>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'B')">B) O próximo token da frase</button>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'C')">C) A tradução do token para número</button>
+            </div>
+            <div class="question" data-correct="C">
+                <p>3 - Quando uma IA generativa cria um texto, ela está:</p>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'A')">A) Copiando frases do treinamento</button>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'B')">B) Repetindo frases aleatórias</button>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'C')">C) Gerando conteúdo novo com base em padrões aprendidos</button>
+            </div>
+            <div class="question" data-correct="A">
+                <p>4 - Qual das opções representa um uso comum de uma IA generativa?</p>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'A')">A) Criar imagens a partir de texto</button>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'B')">B) Prever o tempo</button>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'C')">C) Calcular impostos</button>
+            </div>
+            <div class="question" data-correct="B">
+                <p>5 - O que significa "generalização" em uma IA generativa?</p>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'A')">A) Criar respostas iguais para todos os usuários</button>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'B')">B) Aprender padrões e aplicá-los a novos contextos</button>
+                <button class="btn btn-outline-primary" onclick="checkAnswer(this, 'C')">C) Memorizar frases específicas</button>
+            </div>
+        </div>
+
+        <div class="mt-5 text-center">
+            <a href="page5.html" class="btn btn-secondary me-2">Voltar</a>
+            <a href="page7.html" class="btn btn-primary">Prosseguir</a>
+        </div>
+        <br>
+            <br>
+            <br>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let correctAnswers = 0;
+        let answeredQuestions = 0;
+
+        function checkAnswer(button, selectedAnswer) {
+            const question = button.closest('.question');
+            const correctAnswer = question.getAttribute('data-correct');
+
+            if (selectedAnswer === correctAnswer) {
+                question.classList.add('correct');
+                correctAnswers++;
+            } else {
+                question.classList.add('incorrect');
+            }
+
+            question.classList.add('inactive');
+            answeredQuestions++;
+
+            if (answeredQuestions === 5) {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            const explanations = [
+                "1 - A probabilidade é 50% porque 'de' aparece duas vezes no dataset, seguido por 'bolos' uma vez.",
+                "2 - Durante o treinamento, o modelo aprende a prever o próximo token da frase, baseado nos tokens anteriores.",
+                "3 - Uma IA generativa cria conteúdo novo com base em padrões aprendidos.",
+                "4 - Um uso comum de IA generativa é criar imagens a partir de texto.",
+                "5 - Generalização significa aprender padrões e aplicá-los a novos contextos."
+            ];
+
+            const resultHtml = `
+                <div id="resultModal" class="modal" style="display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1050; color: black;">
+                    <div class="modal-dialog" style="margin: 10% auto; max-width: 600px;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Resultado do Quiz</h5>
+                                <button type="button" class="btn-close" onclick="closeModal()"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p style="color: black;">Você acertou ${correctAnswers} de 5 perguntas.</p>
+                                <h6>Explicações:</h6>
+                                <ul>
+                                    ${explanations.map(explanation => `<li>${explanation}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" onclick="closeModal()">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.insertAdjacentHTML('beforeend', resultHtml);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('resultModal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+    </script>
+</body>
+</html>
